@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- for Facebook -->          
+    <meta property="og:title" content="Bestlaw — A free app to add the features Westlaw and Lexis forgot" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://www.bestlaw.io/images/fb.png?v=2" />
+    <meta property="og:url" content="http://www.bestlaw.io/" />
+    <meta property="og:description" content="Bestlaw is a free app that adds features to Westlaw and Lexis to make legal research faster and easier." />
+
+    <link href="/css/featherlight.min.css" rel="stylesheet" type="text/css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+
+    <title>Bestlaw &mdash; A free app to add the features Westlaw and Lexis forgot</title>
+
+
+    <style type="text/css">
+
+    .fb-share-button span {
+        height: 26px !important
+    }
+
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Bestlaw" />
+    <meta name="title" content="Bestlaw">
+    <link rel="canonical" href="http://www.bestlaw.io//">
+     
+           
+    <meta property="og:title" content="Bestlaw"/>
+    
+    
+    <meta property="og:site_name" content="Bestlaw">     
+    <script>
+    function scrollTo(e) {
+        var scrollPos = (Math.round($(e).position().top) - 120);
+        $('html,body').animate({
+            scrollTop: scrollPos
+        });
+    }
+    $(document).ready(function() {
+        $('#nav-features').click(function() { scrollTo('#features'); });
+        $('#nav-pro').click(function() { scrollTo('#pro'); });
+        $('#nav-about').click(function() { scrollTo('#about'); });
+        $('#nav-install').click(function() { scrollTo('#install'); });
+        $('#nav-faqs').click(function() { scrollTo('#faqs'); });
+    });
+
+    // Redirect for password creation
+    if (getParameterByName('setpw')) {
+        window.location = 'http://bestlawpro.appspot.com/create-new-password/' + getParameterByName('setpw') + '/';
+    }
+
+    // Get querystring params
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    </script>
+
+    <!-- Chrome inline installation -->
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/maffnemieclgahnalopfngbddfhneghd">
+    <script>
+    $(document).ready(function() {
+        $('.install-button').click(function() {
+            $(this).blur();
+            if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+                // User is using Chrome; trigger inline installation
+                chrome.webstore.install();
+                // chrome.webstore.install('https://chrome.google.com/webstore/detail/maffnemieclgahnalopfngbddfhneghd', function() { $.featherlight($('.success-modal'), {closeOnEsc: false, closeIcon: '', closeOnClick: false}); }, function() { console.log('Installation failed'); });
+            } else if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+                window.location  = 'https://s3.amazonaws.com/bestlaw/firefox-extension/bestlaw.xpi';
+            } else {
+                // Browser is *not* Chrome; redirect to the Chrome web store
+                window.location = 'https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd';
+            }
+        });
+        $(document).on('click', '#no-thanks-link', function() {
+            $.featherlight.close();
+        });
+    });
+    </script>
+
+
+<style type="text/css">
+
+.success-modal {
+    display: none;
+    padding: 30px;
+    text-align: center;
+}
+
+    p.fb-share-container {
+        margin: 25px auto 10px auto;
+    }
+
+    .large-fb-share-button {
+            -moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+            -webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+            box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+            background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
+            background:-moz-linear-gradient(top, #637aad 5%, #5972a7 100%);
+            background:-webkit-linear-gradient(top, #637aad 5%, #5972a7 100%);
+            background:-o-linear-gradient(top, #637aad 5%, #5972a7 100%);
+            background:-ms-linear-gradient(top, #637aad 5%, #5972a7 100%);
+            background:linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#637aad', endColorstr='#5972a7',GradientType=0);
+            background-color:#637aad;
+            -moz-border-radius:4px;
+            -webkit-border-radius:4px;
+            border-radius:4px;
+            border:1px solid #314179;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff !important;
+            font-family:Arial;
+            font-size:24px;
+            font-weight:bold;
+            padding:22px 36px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #000000;
+    }
+    .large-fb-share-button:hover {
+        opacity: 0.9;
+    }
+    .large-fb-share-button:active {
+            position:relative;
+            top:1px;
+    }
+        
+    .no-thanks {
+        color: #aaa !important;
+        font-size: 9px !important;
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="success-modal" style="display: none; padding: 30px; text-align: center;">
+            <h2>You're all set!</h2>
+            <p>Bestlaw will start when you visit Westlaw or Lexis.</p>
+            <p>Will you take a second to share?</p>
+            <p class="fb-share-container"><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.fluffblocker.com%2F" target="_blank" class="large-fb-share-button">Share on Facebook</a></p>
+            <p><a href="javascript:void(0);" class"no-thanks" id="no-thanks-link" style="color: #bbb !important; font-size: 12px; text-decoration: none;">No thanks</a></p>
+</div>
+    
+<section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Bestlaw">
+            </a>
+            <a href="javascript:void(0);" id="nav-features" class="home">Features</a>
+            <a href="javascript:void(0);" id="nav-pro" class="home">Pro</a>
+            <a href="javascript:void(0);" id="nav-about" href="#about">About</a>
+            <a href="javascript:void(0);" id="nav-install">Install</a>
+            <a href="javascript:void(0);" id="nav-faqs">FAQs</a>
+            <!--
+            <a href="https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd">Product</a>
+            
+            -->
+        </nav>
+        <nav class="tagline">
+            <!-- <span>Add to Google Chrome</span> -->
+            <a href="javascript:void(0);" class="install-button btn btn-outline">Install</a>
+        </nav>
+    </header>
+</section>
+
+<div class="blog-cover" style="background-image:url(/images/blog-cover.jpg);">
+    
+    <section>
+        <div class="container">
+            <h1>Bestlaw</h1>
+            <h3>A free app to add the features Westlaw and Lexis forgot</h3>
+        
+            <a href="https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd" class="install-button btn btn-large" style="font-size: 1.5em;">Get Started</a>
+
+        </div>
+    </section>
+</div>
+
+
+<article class="container">
+
+    <section class="index">
+        <div style="text-align: center;">
+            <p style="font-size:1.3em; text-align: center;">Bestlaw adds features to <a 
+            href="http://info.legalsolutions.thomsonreuters.com/westlawnext/about/default.aspx?FindMethod=Menu_WN_WLNSite">Westlaw</a> 
+            and <a href="http://advance.lexis.com/">Lexis</a><br />
+            to make legal research faster and easier.
+            </p>
+
+            <!-- share buttons -->
+            <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=237049473161018&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-share-button" data-href="http://bestlaw.io" data-type="button_count"></div>
+            &nbsp;&nbsp;
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.bestlaw.io" data-via="morninj">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </p>
+
+            <hr>
+            <p style="font-size:1.3em; text-align: center;">Bestlaw has enhanced more than <strong>twelve million documents</strong>. It's used at top law schools, firms, nonprofits, and courts.</p>
+            <hr>
+            <p style="font-size:1.3em; text-align: center;"><strong>Never write another Bluebook citation</strong>. Bestlaw automatically creates perfect citations with one click.</p>
+            <hr>
+            <p style="font-size:1.3em; text-align: center;">Installation is free and quick.</p>
+            <p class="general-add-to-chrome"> <a href="https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd" class="install-button btn btn-large" style="font-size: 1.5em; margin: 0 0 40px 0;">Try It Now</a> </p>
+            
+            <!--
+            <p style="margin-top: 50px;">
+            <span style="font-family: Georgia, serif; color: #555; font-size: 22px; font-style: italic;">&ldquo;A bunch of useful features&hellip;definitely give it a try.&rdquo;</span>
+            <br>
+            <a href="http://lawyerist.com/77143/bestlaw-chrome-adds-features-westlaw-forgot/"><img src="/images/lawyerist.png" width="241" height="47" alt="Lawyerist"></a>
+            </p>
+            -->
+
+            <!-- TODO uncomment            <p style="margin-top: 50px;">
+            <span style="font-family: Georgia, serif; color: #555; font-size: 22px; font-style: italic;">&ldquo;#Genius.&rdquo;</span>
+            <br>
+            <a href="https://twitter.com/lessig/status/515213070936059904"><img src="/images/lessig.png" width="241" height="47" alt="Lawyerist"></a>
+            </p>
+             -->
+
+
+        </div>
+        <hr style="margin-top: 1em;"><!-- TODO inline styles to css file -->
+        <!-- TODO add disclaimer with icon http://thenounproject.com/term/business-man/21520/ -->
+        <div>
+            <h2 class="title" id="features">Features</h2>
+            <p>When you read a document&mdash;like a case, statute, or law 
+            review article&mdash;Bestlaw adds a toolbar with these 
+            features:</p>
+            <ul>
+                <li>Copy a perfect Bluebook citation with one click</li>
+                <li>Read documents in a clean, readable view with beautiful typography</li>
+                <li>Prevent getting automatically signed off</li>
+                <li>Highlight dissenting and concurring opinions so you know what you're reading</li>
+                <li>Collapse and expand statutory sections</li>
+                <li>Automatically generate a clickable table of contents for any document</li>
+                <li>One-click copying for citations, titles, docket numbers, and full text</li>
+                <li>Highlight hard-to-see page numbers</li>
+                <li>Jump between footnotes and the main text without losing your place</li>
+                <li>Instantly look up information about a case on Wikipedia and other sources</li>
+                <li>Share the document by email or on Facebook, Twitter, and Google+</li>
+            </ul>
+            <p>
+                <img src="/images/screenshot.png" alt="Screenshot" class="screenshot">
+            </p>
+            <p class="general-add-to-chrome"> <a href="https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd" class="install-button btn btn-large">Install for Free</a> </p>
+        </div>
+        <hr>
+        <div>
+            <h2 class="title" id="pro">Pro</h2>
+            <p>Bestlaw Pro helps you save time and money. It gives you:</p>
+            <ul>
+                <li><strong>Automatic Bluebook citations</strong>: generate perfect citations with a single click.</li>
+                <li><strong>Free secondary sources</strong>: get free access to journal articles and other materials.</li>
+                <li><strong>Free PDF downloads</strong>: save cases offline without getting charged.</li>
+                <li><strong>Free printing</strong>: never pay for printing cases.</li>
+                <li><strong>Tables of contents</strong>: generate a clickable table of contents for any case or document.</li>
+                <li><strong>Open in new tabs</strong>: in search results, open multiple documents in new tabs with one click.</li>
+            </ul>
+            <p>It costs $5 per month. Signing up is easy: just install Bestlaw, open a document on Westlaw or Lexis, and then click the "Pro" tab.</p>
+            <p>If you have any questions, feel free to email <script>document.write('<a href="mail' + 'to:help@' + 'best' + 'law' + '.io">help@' + 'best' + 'law' + '.io</a>.');</script></p>
+            <p class="general-add-to-chrome"> <a href="https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd" class="install-button btn btn-large">Install for Free</a> </p>
+        </div>
+        <hr>
+        <div>
+            <h2 class="title" id="about">About</h2>
+            <img src="/images/joe.png" alt="Joe Mornin" style="float: left; margin: 10px 40px 20px 0;"/>
+            <p>I'm Joe. I'm a software engineer and lawyer in San Francisco. You can read more <a href="http://www.mornin.org">here</a>.</p> 
+        <div style="clear: both;"></div>
+        </div>
+        <hr>
+        <div>
+            <h2 class="title" id="install">Install</h2>
+            <!--
+            <p class="main-quotation">&ldquo;Let&rsquo;s face it, a chimp could use 
+            these systems and get results. Do not limit yourself like that. 
+            Take the systems seriously.&hellip; You can do better than the 
+            chimp.&rdquo;</p>
+            <p class="quotation-source">&mdash; Prof. Robert Berring, Walter 
+            Perry Johnson Professor of Law, UC Berkeley School of Law (Boalt 
+            Hall), <a 
+            href="http://www.amazon.com/Berrings-Research-Survival-American-Coursebooks/dp/0314264000">Legal 
+            Research Survival Manual</a>, p. 9.</p>
+            -->
+            <p>Installation is free and easy. Make sure you're using Google 
+            Chrome or Mozilla Firefox, and then click this button:</p>
+            <p class="general-add-to-chrome"> <a href="https://chrome.google.com/webstore/detail/bestlaw/maffnemieclgahnalopfngbddfhneghd" class="install-button btn btn-large">Install for Free</a> </p>
+            <br><br>
+            <p>If you run into trouble, check the FAQs below or email
+            
+            <script>document.write('<a href="mail' + 'to:help@' + 'best' + 'law' + '.io">help@' + 'best' + 'law' + '.io</a>.');</script></p>
+        </div>
+        <hr>
+        <div>
+            <h2 class="title" id="faqs">FAQs</h2>
+
+            <p class="faq-question">How does it work?</p>
+            <p class="faq-answer">Bestlaw is a browser extension. When you're browsing Westlaw or Lexis, it automatically adds features to make research faster and easier.</p>
+
+            <p class="faq-question">Does it cost anything?</p>
+            <p class="faq-answer">No, it's free. If you're a practicing attorney, you might consider upgrading to Bestlaw Pro. It gives you free printing, free PDF downloads, and free access to secondary sources. It costs $5 per month, and it can save you hundreds of dollars in monthly fees.</p>
+
+            <p class="faq-question">Does it work with Lexis and/or Westlaw?</p>
+            <p class="faq-answer">Yes, it works with WestlawNext and Lexis Advance.</p>
+
+            <p class="faq-question">What browsers can I use?</p>
+            <p class="faq-answer">Bestlaw works on Google Chrome and Mozilla Firefox.</p>
+
+            <p class="faq-question">How do I install it?</p>
+            <p class="faq-answer"><a href="javascript:void(0);" class="install-button">Click here</a>.
+            Then, follow the instructions. Bestlaw will activate when you read a document on Westlaw or Lexis. If 
+            you run into trouble, feel free to email <script>document.write('<a href="mail' + 'to:help@' + 'best' + 'law' + '.io">help@' + 'best' + 'law' + '.io</a>.');</script></p>
+
+            <p class="faq-question">How do I uninstall it?</p>
+            <p class="faq-answer">Follow the instructions for <a 
+            href="https://support.google.com/chrome_webstore/answer/2664769?hl=en">Chrome</a> or <a href="https://support.mozilla.org/en-US/kb/disable-or-remove-add-ons">Firefox</a>.</p>
+
+            <p class="faq-question">How do I upgrade to the most recent version?</p>
+            <p class="faq-answer">Bestlaw automatically checks for updates every day.</p>
+
+            <p class="faq-question">How do I cancel my subscription or change my credit card information?</p>
+            <p class="faq-answer">Email <script>document.write('<a href="mail' + 'to:help@' + 'best' + 'law' + '.io">help@' + 'best' + 'law' + '.io</a>.');</script></p>
+        </div>
+    </section><!--/.index-->
+</article>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        <p style="text-align: center;">&copy; 2014&ndash;2015 Bestlaw, LLC&nbsp;&nbsp;&middot;&nbsp;&nbsp;By <a style="color: #2077b2;" href="http://www.twitter.com/morninj">@morninj</a></p>
+        <p style="text-align: center;"><strong>By using Bestlaw, you agree to the <a style="color: #2077b2;" href="https://s3.amazonaws.com/bestlaw/docs/terms-of-service.html">terms and conditions</a>.</strong></a></p>
+        <p style="text-align: center;">Westlaw and WestlawNext are registered 
+        trademarks of West Publishing Corporation.<br>Bestlaw is not affiliated 
+        with West, Westlaw, or WestlawNext.</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51091504-1', 'bestlaw.io');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
